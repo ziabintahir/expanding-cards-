@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&family=Lobster+Two:ital,wght@0,700;1,400&family=Montserrat:ital,wght@1,800&family=Ubuntu&display=swap');
+
+
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FFB84C; 
+    /*F5EAEA-grey   FFB84C  F16767 A459D1     */
+    font-family: 'Lobster', cursive;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    width: 90%;
+    /* border: 1px solid black; */
+}
+.panel {
+    
+    /* border: 1px solid black; */
+    height:80%;
+    
+    color: white;
+    border-radius: 50px ;
+    
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20px;
+    flex:.2;  /* for width as inc value width of flex box will increase*/
+    position: relative;
+    cursor: pointer;
+    transition: flex .1s ease-out;
+    text-align: center;
+    transform: skew(20deg,20deg);
+}
+/* .panel:hover{
+    flex:9;
+    transform: skew(00deg,00deg); 
+    to get to the priginal position we did it other wise you will see tilted image on hovering
+    
+    border-radius: 50px ;
+    
+    transition: flex .7s ease-in;
+    
+    
+    
+} */
+.panel.active{
+    flex:3;
+    transform: skew(00deg,00deg); 
+    /* transition: flex 1.5s ease-in-out; */
+    transition: transform .5s;
+}
+.panel h3{
+    font-size: 50px;
+    opacity: 0;
+}
+
+/* .panel:hover h3{
+    
+    opacity: 1;
+} */
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.4s;
+
+}
+@media (max-width:800px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+    
+}
